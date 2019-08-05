@@ -108,6 +108,10 @@ contText[0].textContent = siteContent.contact.address;
 contText[1].textContent = siteContent.contact.phone;
 contText[2].textContent = siteContent.contact.email;
 
+let addressArray = siteContent['contact']['address'].split(' ');
+addressArray.splice(4, 0, '\r\n');
+contText[0].innerText = addressArray.join(' ');
+
 //Footer
 document.querySelector("footer p").textContent = siteContent.footer.copyright;
 
